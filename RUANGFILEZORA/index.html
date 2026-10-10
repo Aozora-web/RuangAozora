@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aozora</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="./"><span class="logo">A</span><span><b>Aozora</b><small>Pusat berkas zora</small></span></a>
+    <p class="label">PERPUSTAKAAN</p>
+    <button class="nav active" data-filter="all">▦ Semua file <span id="countAll">0</span></button>
+    <button class="nav" data-filter="document">▤ Dokumen</button>
+    <button class="nav" data-filter="image">▧ Gambar</button>
+    <button class="nav" data-filter="video">▷ Video</button>
+    <button class="nav" data-filter="other">◫ Lainnya</button>
+    <div class="side-note"><b>☁ Langit Yang Biru</b><p>Kita menatap hamparan cakrawala yang sama, memeluk rindu pada sesuatu yang belum nyata, berharap angin membawakan jawaban yang tak pernah berani kita susun dalam kata</p></div>
+    <small class="side-foot">AOZORA</small>
+  </aside>
+
+  <main>
+    <header>
+      <button id="menuBtn" aria-label="Buka menu">☰</button>
+      <span>Aozora / <b id="pageTitle">Semua file</b></span>
+      <span class="online">● Aozora</span>
+    </header>
+
+    <section class="content">
+      <div class="hero">
+        <div><p class="eyebrow">ARSIP DIGITAL ZORA</p><h1>Langit Yang Biru</h1><p class="muted">Sedang apa kau di bawah langit yang sama?</p></div>
+        <button class="button" id="uploadButton">＋ Pilih file</button>
+        <input id="fileInput" type="file" multiple hidden>
+      </div>
+
+      <div class="notice"><b>ⓘ</b><span><strong>Penting:</strong> Kita sering kali bercerita pada angin malam tentang rindu yang tak berwajah, tanpa tahu bahwa sosok yang kita bicarakan sedang terdenyum menatap bintang yang sama</span></div>
+
+      <div class="local-preview" id="previewBox" hidden>
+        <div><strong>Pratinjau file dari perangkat ini</strong><p>File di bagian ini hanya terlihat di browser kamu dan tidak diunggah ke internet.</p></div>
+        <button id="clearPreview" class="secondary">Tutup pratinjau</button>
+      </div>
+
+      <div class="stats">
+        <article><small>Total file publik</small><strong id="total">0</strong></article>
+        <article><small>Dokumen</small><strong id="docs">0</strong></article>
+        <article><small>Gambar</small><strong id="images">0</strong></article>
+        <article><small>Kategori</small><strong id="types">0</strong></article>
+      </div>
+
+      <section class="panel" id="file-list">
+        <div class="panel-head"><div><h2>Daftar file publik</h2><p class="muted">File yang terdaftar di files.json.</p></div><div class="controls"><input id="search" placeholder="Cari file..." type="search"><select id="sort"><option value="newest">Terbaru</option><option value="name">Nama A–Z</option><option value="oldest">Terlama</option></select></div></div>
+        <div class="scroll"><table><thead><tr><th>NAMA FILE</th><th>KATEGORI</th><th>UKURAN</th><th>AKSI</th></tr></thead><tbody id="rows"></tbody></table></div>
+        <div class="empty" id="empty" hidden><h3>Belum ada file publik</h3><p>Tambahkan PDF ke folder files/ dan daftarkan di files.json.</p></div>
+      </section>
+
+      <section class="panel preview-panel" id="previewPanel" hidden>
+        <div class="panel-head"><div><h2>Pratinjau lokal</h2><p class="muted">Hanya untuk sesi browser ini; bukan file publik.</p></div></div>
+        <div class="scroll"><table><thead><tr><th>NAMA FILE</th><th>KATEGORI</th><th>UKURAN</th><th>AKSI</th></tr></thead><tbody id="previewRows"></tbody></table></div>
+      </section>
+      <footer><span>© 2026 Aozora</span><span>Terbanglah dengan bebas... Aozora</span></footer>
+    </section>
+  </main>
+  <div id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
